@@ -11,7 +11,7 @@ const createHtmlElement = (htmlElementName, attributes, className) => {
 const createMenu = (data) => {
   const menu = createHtmlElement("ul", { id: "menu"},'menu');
   data.forEach(
-    (item, index) => { menu.appendChild(createMenuItem(data[index], index)) }
+    (item, index) => { menu.appendChild(createMenuItem(item, index)) }
   )
   return menu;
 };
@@ -21,7 +21,7 @@ const createMenuItem = (data, id) => {
     id: `menu-item-${id}`,
     'data-id': id,
   },'menu-item');
-  menuItem.innerHTML = `<a href="#" data-id=${id} class="menu-link">${data["name"]}</a>`;
+  menuItem.innerHTML = `<a href="#" class="menu-link">${data["name"]}</a>`;
   return menuItem;
 };
 
